@@ -16,18 +16,18 @@ function sum(event) {
   // Prevent empty input
   if (billAmount.value == '') {
     alert('you must to fill Bill Amount!');
-  };
-  if (tipPercentage.value == '') {
+  } else if (tipPercentage.value == '') {
     alert('you must to fill Tip Percentage!')
+  } else {
+    // Returns Bill Amount Input Value
+    const amount = Number(billAmount.value);
+    // Returns Bill Amount Input Value
+    const per = Number(tipPercentage.value);
+    // Calculate Tip Amount
+    const tip = amount * per / 100;
+    tipAmount.value = tip;
+    // Calculate Total Bill
+    const total = amount + tip;
+    totalBill.value = total;
   };
-  // Returns Bill Amount Input Value
-  const amount = Number(billAmount.value);
-  // Returns Bill Amount Input Value
-  const per = Number(tipPercentage.value);
-  // Calculate Tip Amount
-  const tip = amount * per / 100;
-  tipAmount.value = tip;
-  // Calculate Total Bill
-  const total = amount + tip;
-  totalBill.value = total;
 }
